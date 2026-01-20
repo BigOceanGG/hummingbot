@@ -179,7 +179,8 @@ class BinanceAPIUserStreamDataSource(UserStreamTrackerDataSource):
         # Get a websocket assistant and connect it
         ws = await self._get_ws_assistant()
         url = f"{CONSTANTS.WSS_URL.format(self._domain)}/{self._current_listen_key}"
-
+        if self._domain == CONSTANTS.TESTNET_DOMAIN:
+            url = f"{CONSTANTS.TESTNET_WSS_URL}/{self._current_listen_key}"
         self.logger().info(f"Connecting to user stream with listen key {self._current_listen_key}")
         await ws.connect(ws_url=url, ping_timeout=CONSTANTS.WS_HEARTBEAT_TIME_INTERVAL)
         self.logger().info("Successfully connected to user stream")
