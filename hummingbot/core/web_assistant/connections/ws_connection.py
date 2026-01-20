@@ -36,6 +36,7 @@ class WSConnection:
         max_msg_size: Optional[int] = None
     ):
         self._ensure_not_connected()
+        print(f"[INFO] Connecting to WebSocket URL: {ws_url}")
         self._connection = await self._client_session.ws_connect(
             ws_url,
             headers=ws_headers,
