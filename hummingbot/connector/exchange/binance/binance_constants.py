@@ -12,7 +12,7 @@ REST_URL = "https://api.binance.{}/api/"
 WSS_URL = "wss://stream.binance.{}:9443/ws"
 
 TESTNET_REST_URL = "https://testnet.binance.vision/api/"
-TESTNET_WSS_URL = "wss://testnet.binance.vision:9443/ws"
+TESTNET_WSS_URL = "wss://stream.testnet.binance.vision/ws"
 
 PUBLIC_API_VERSION = "v3"
 PRIVATE_API_VERSION = "v3"
