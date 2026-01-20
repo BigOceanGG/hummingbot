@@ -79,6 +79,8 @@ def build_perpetual_trade_fee(
 
 
 def estimate_fee(exchange: str, is_maker: bool) -> TradeFeeBase:
+    if exchange == "binance_binance_testnet":
+        exchange = "binance_testnet"
     """
     WARNING: This method is deprecated and remains only for backward compatibility.
     Use `build_trade_fee` and `build_perpetual_trade_fee` instead.
